@@ -10,10 +10,8 @@ body {
   }
   
   .container {
-    /* background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    padding-left: 100px;
+    padding-right: 100px;
     text-align: center;
   }
   
@@ -27,17 +25,18 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+    flex-wrap: wrap;
   }
   
   .actor-card {
     background-color: #fff;
     border-radius: 8px;
-    padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: calc(33.33% - 20px); 
     text-align: center;
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 20px;
   }
   
   .actor-card img {
@@ -88,4 +87,12 @@ body {
   
   #chooseButton:hover {
     background-color: rgb(31, 31, 31); 
+  }
+
+  .bottom-list{
+    background-color: #a3a3a3;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
   }

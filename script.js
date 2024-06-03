@@ -82,3 +82,24 @@ userName.forEach(name => {
         addActorToList(actorName);
     });
 });
+
+
+const saveButton = document.getElementById("saveChoose");
+
+saveButton.addEventListener('click', ()=>{
+    let actors = actorList.join(', ');
+    alert(`You choosed: ${actors}`);
+    while (bottomListUl.firstChild) {
+        bottomListUl.removeChild(bottomListUl.firstChild);
+    }
+    actorList.length = 0;
+})
+
+const deleteButton = document.getElementById('deleteChoose');
+
+deleteButton.addEventListener('click', () => {
+while (bottomListUl.firstChild) {
+    bottomListUl.removeChild(bottomListUl.firstChild);
+}
+actorList.length = 0;
+});

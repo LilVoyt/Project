@@ -95,6 +95,8 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+    width: calc(100%); 
+    flex-wrap: wrap;
   }
 
   .bottom-list ul {
@@ -102,10 +104,13 @@ body {
     padding: 0; 
     margin: 0; 
     display: flex; 
+    flex-wrap: wrap;
 }
 
 .bottom-list ul li {
-    margin-right: 10px; 
+    width: 100px; 
+    height: 40px;
+    margin: 10px;
 }
 
 .bottom-list ul li:last-child {

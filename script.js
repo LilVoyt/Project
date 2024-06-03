@@ -52,36 +52,33 @@ function getSocialIcon(url) {
 let actorList = [];
 
 const userPhotos = document.querySelectorAll(".actor-card img");
+const userName = document.querySelectorAll(".actor-card h2");
 const bottomList = document.querySelector('.bottom-list');
 const bottomListUl = bottomList.querySelector('ul');
+
+function addActorToList(actorName) {
+    if (actorList.includes(actorName)) {
+        alert('china');
+    } else {
+        actorList.push(actorName);
+        const actorNameLi = document.createElement('li');
+        actorNameLi.textContent = actorName;
+        bottomListUl.appendChild(actorNameLi);
+    }
+    console.log(actorList);
+}
 
 userPhotos.forEach(photo => {
     photo.addEventListener("click", () => {
         const parentDiv = photo.closest('.actor-card');
         const actorName = parentDiv.querySelector('h2').textContent;
-        if (actorList.includes(actorName)) {
-            alert('china');
-        } else {
-            actorList.push(actorName);
-            const actorNameli = document.createElement('h2');
-            actorNameli.textContent = actorName;
-            bottomListUl.appendChild(actorNameli);
-        }
+        addActorToList(actorName);
     });
 });
 
-const userName = document.querySelectorAll(".actor-card h2");
-
 userName.forEach(name => {
     name.addEventListener("click", () => {
-        const actorName = name.closest('.actor-card');
-        if (actorList.includes(actorName)) {
-            alert('china');
-        } else {
-            actorList.push(actorName);
-            const actorNameli = document.createElement('li');
-            actorNameli.textContent = actorName;
-            bottomListUl.appendChild(actorNameli);
-        }
+        const actorName = name.textContent;
+        addActorToList(actorName);
     });
 });

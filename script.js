@@ -63,7 +63,7 @@ function addActorToList(actorName) {
     }
 
     if (actorList.includes(actorName)) {
-        alert('china');
+        alert('You have selected this person!');
     } else {
         actorList.push(actorName);
         const actorNameLi = document.createElement('li');

@@ -79,13 +79,16 @@ userPhotos.forEach(photo => {
         const parentDiv = photo.closest('.actor-card');
         const actorName = parentDiv.querySelector('h2').textContent;
         addActorToList(actorName);
+        parentDiv.style.backgroundColor = 'lightblue';
     });
 });
 
 userName.forEach(name => {
     name.addEventListener("click", () => {
+        const parentDiv = name.closest('.actor-card');
         const actorName = name.textContent;
         addActorToList(actorName);
+        parentDiv.style.backgroundColor = 'lightblue';
     });
 });
 
@@ -102,7 +105,12 @@ saveButton.addEventListener('click', ()=>{
     const boxInnerText = document.createElement('h2');
     boxInnerText.textContent = "You choosed";
     bottomList.appendChild(boxInnerText);
-})
+    const actorDivs = document.querySelectorAll('.actor-card');
+    actorDivs.forEach(actor => {
+        actor.style.backgroundColor = 'white';
+    })
+    }
+);
 
 const deleteButton = document.getElementById('deleteChoose');
 
@@ -114,4 +122,8 @@ deleteButton.addEventListener('click', () => {
     const boxInnerText = document.createElement('h2');
     boxInnerText.textContent = "You choosed";
     bottomList.appendChild(boxInnerText);
+    const actorDivs = document.querySelectorAll('.actor-card');
+    actorDivs.forEach(actor => {
+        actor.style.backgroundColor = 'white';
+    })
 });

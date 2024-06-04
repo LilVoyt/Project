@@ -23,7 +23,7 @@ body {
   
   .actor-cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 30px;
     flex-wrap: wrap;
   }
@@ -95,7 +95,7 @@ body {
     border-radius: 8px;
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     width: calc(100%); 
     flex-wrap: wrap;
   }
@@ -152,4 +152,9 @@ button:active {
 button:focus {
   outline: none;
   box-shadow: 0 0 3px 2px rgba(66, 139, 202, 0.6);
+}
+
+.bottom{
+  position: sticky;
+  bottom: 10px;
 }

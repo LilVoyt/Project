@@ -57,6 +57,11 @@ const bottomList = document.querySelector('.bottom-list');
 const bottomListUl = bottomList.querySelector('ul');
 
 function addActorToList(actorName) {
+    if(actorList.length == 0){
+        const textBox = document.querySelector(".bottom-list h2")
+        bottomList.removeChild(textBox);
+    }
+
     if (actorList.includes(actorName)) {
         alert('china');
     } else {
@@ -67,6 +72,7 @@ function addActorToList(actorName) {
     }
     console.log(actorList);
 }
+
 
 userPhotos.forEach(photo => {
     photo.addEventListener("click", () => {
@@ -93,13 +99,19 @@ saveButton.addEventListener('click', ()=>{
         bottomListUl.removeChild(bottomListUl.firstChild);
     }
     actorList.length = 0;
+    const boxInnerText = document.createElement('h2');
+    boxInnerText.textContent = "You choosed";
+    bottomList.appendChild(boxInnerText);
 })
 
 const deleteButton = document.getElementById('deleteChoose');
 
 deleteButton.addEventListener('click', () => {
-while (bottomListUl.firstChild) {
-    bottomListUl.removeChild(bottomListUl.firstChild);
-}
-actorList.length = 0;
+    while (bottomListUl.firstChild) {
+        bottomListUl.removeChild(bottomListUl.firstChild);
+    }
+    actorList.length = 0;
+    const boxInnerText = document.createElement('h2');
+    boxInnerText.textContent = "You choosed";
+    bottomList.appendChild(boxInnerText);
 });

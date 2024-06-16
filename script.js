@@ -12,7 +12,7 @@ actors.forEach(actor => {
     img.src = actor.profilePicture ? actor.profilePicture : 'customer-photo/default-profile-picture.jpg';
     img.onerror = function() {
         this.src = 'customer-photo/default-profile-picture.jpg';
-      };
+    };
     img.alt = `${actor.firstName} ${actor.lastName}`;
 
     const socialLinks = document.createElement('div');
@@ -51,8 +51,7 @@ function getSocialIcon(url) {
 
 let actorList = [];
 
-const userPhotos = document.querySelectorAll(".actor-card img");
-const userName = document.querySelectorAll(".actor-card h2");
+const actorCards = document.querySelectorAll(".actor-card");
 const bottomList = document.querySelector('.bottom-list');
 const bottomListUl = bottomList.querySelector('ul');
 
@@ -73,25 +72,22 @@ function addActorToList(actorName) {
     console.log(actorList);
 }
 
+actorCards.forEach(card => {
+    const photo = card.querySelector('img');
+    const name = card.querySelector('h2');
 
-userPhotos.forEach(photo => {
     photo.addEventListener("click", () => {
-        const parentDiv = photo.closest('.actor-card');
-        const actorName = parentDiv.querySelector('h2').textContent;
-        addActorToList(actorName);
-        parentDiv.style.backgroundColor = 'lightblue';
-    });
-});
-
-userName.forEach(name => {
-    name.addEventListener("click", () => {
-        const parentDiv = name.closest('.actor-card');
         const actorName = name.textContent;
         addActorToList(actorName);
-        parentDiv.style.backgroundColor = 'lightblue';
+        card.style.backgroundColor = 'lightblue';
+    });
+
+    name.addEventListener("click", () => {
+        const actorName = name.textContent;
+        addActorToList(actorName);
+        card.style.backgroundColor = 'lightblue';
     });
 });
-
 
 const saveButton = document.getElementById("saveChoose");
 
@@ -109,8 +105,7 @@ saveButton.addEventListener('click', ()=>{
     actorDivs.forEach(actor => {
         actor.style.backgroundColor = 'white';
     })
-    }
-);
+});
 
 const deleteButton = document.getElementById('deleteChoose');
 
